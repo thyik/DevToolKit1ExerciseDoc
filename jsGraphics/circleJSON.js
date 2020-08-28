@@ -7,11 +7,13 @@ var jsonCircles = [
                                        .attr("width", 200)
                                         .attr("height", 200);
     
+    // build the circles
     var circles = svgContainer.selectAll("circle")
                              .data(jsonCircles) //place holder 
                              .enter() //reference
                               .append("circle"); //3 circles
     
+    // map json key to attributes (cx,cy,r,fill)
     var circleAttributes = circles
                            .attr("cx", function (d) { return d.x_axis; })
                            .attr("cy", function (d) { return d.y_axis; })
