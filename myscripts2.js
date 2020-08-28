@@ -1,8 +1,10 @@
 //alert ('hello world'); 
 function myFunction() {
     
+    // getElementById() to get by elements
     document.getElementById("h1ref").style.backgroundColor = "greenyellow";
     //document.querySelector(".info").style.color = "green";
+    // querySelectorAll() to get class
     myArray = document.querySelectorAll(".info");
     myArray.forEach(function(items) {
          items.style.color ="green";
