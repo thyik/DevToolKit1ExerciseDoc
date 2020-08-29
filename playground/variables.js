@@ -9,7 +9,8 @@ var d = 55;
 // template literal `..`
 console.log(`My answer is ${d}`);
 
-var myStr = 'Hello World';
+var myStr = "Hello \" World";
+console.log(myStr);
 
 var x = 10;
 var y = 20;
