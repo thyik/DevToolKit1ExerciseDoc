@@ -7,15 +7,15 @@ function myScatterPlot() {
         .attr("width", 600)
         .attr("height", 600);
 
-    var xScale = d3.scale.linear()
+    var xScale = d3.scaleLinear()
         .domain([0, d3.max(dataset, function (d) { return d[0]; })])
-        .range([0, w]);
+        .range([0, 600]);
 
-    var yScale = d3.scale.linear()
+    var yScale = d3.scaleLinear()
         .domain([0, d3.max(dataset, function (d) { return d[1]; })])
-        .range([0, h]);
+        .range([0, 600]);
 
-    var rScale = d3.scale.linear()
+    var rScale = d3.scaleLinear()
         .domain([0, d3.max(dataset, function (d) { return d[1]; })])
         .range([2, 5]);
 
@@ -48,11 +48,8 @@ function myScatterPlot() {
 
 
     // setup axis
-    var xAxis = d3.svg.axis();
-    xAxis.scale(xScale);
-    xAxis.orient("bottom");
-    svg.append("g")
-        .call(xAxis);
+    //var xAxis = svg.append('g').call(d3.axisBottom());
+
     /*                <circle cx="0" cy="0" r="10" fill="blue"
                    transform="scale(4)" />
     */
