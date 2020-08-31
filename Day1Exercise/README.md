@@ -37,6 +37,7 @@ Additional References
   * ```<script src="https://d3js.org/d3-scale.v3.min.js"></script>```
 * [d3-axis](https://github.com/d3/d3-axis)
   * ```<script src="https://d3js.org/d3-axis.v2.min.js"></script>```
+* [Javascript Promise](https://www.youtube.com/watch?v=fdOa6jrJ0UM)
 
 ## Javascript
 

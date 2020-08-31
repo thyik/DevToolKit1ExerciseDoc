@@ -3,14 +3,12 @@ function myScatterPlot() {
     console.log("entering...");
     
     //debugger;
-    d3.csv("./dataset.csv", function(error, data)  {
+    const myPromise = d3.csv("./dataset.csv");
+    
+    myPromise.then((data)  => {
 
+        //debugger;
         console.log("callback...")
-        if (error)
-        {
-            console.log("callback error...")
-            throw error;
-        }
 
         var i=0;
         data.forEach(d => {
@@ -22,42 +20,49 @@ function myScatterPlot() {
             i++;
         });
 
-    });
+        // plot to view
+        plot(dataset);
+        })
+        .catch(error => {
+            alert("File Missing!!!")
+        });
 
-    // ?? why never plot using update csv data???
-    console.log(dataset);
+}
 
+/* Plot the scatter plot graph given the dataset */
+function plot(dataset) {
     // constants
     const WIDTH = 600;
     const HEIGHT = 600;
     const PADDING = 20;
-    
+
     // setup data scaling to fit view
     // x-scale
     var xScale = d3.scaleLinear()
-                    .domain([0, d3.max(dataset, d => d[0])])
-                    .range([PADDING, WIDTH - PADDING]);
-    
+        .domain([0, d3.max(dataset, d => d[0])])
+        .range([PADDING, WIDTH - PADDING]);
+
     // y-scale
     var yScale = d3.scaleLinear()
-                    .domain([0, d3.max(dataset, d => d[1])])
-                    .range([HEIGHT - PADDING, PADDING]);        // reverse the range as view coordinate start from top-left
-    
+        .domain([0, d3.max(dataset, d => d[1])])
+        .range([HEIGHT - PADDING, PADDING]); // reverse the range as view coordinate start from top-left
+
+
     // Create SVG element
     var svg = d3.select("body")
         .append("svg")
         .attr('width', WIDTH)
         .attr("height", HEIGHT);
-    
+
     // create circle dot datapoint
     svg.selectAll("circle")
-    .data(dataset)
-    .enter()
-    .append("circle")
-    .attr("cx", pt => xScale(pt[0]))
-    .attr("cy", pt => yScale(pt[1]))
-    .attr("r", 5);
-    
+        .data(dataset)
+        .enter()
+        .append("circle")
+        .attr("cx", pt => xScale(pt[0]))
+        .attr("cy", pt => yScale(pt[1]))
+        .attr("r", 5);
+
     // create label for each point
     svg.selectAll("text")
         .data(dataset)
@@ -69,16 +74,16 @@ function myScatterPlot() {
         .attr("font-family", "sans-serif")
         .attr("font-size", "11px")
         .attr("fill", "red");
-    
+
     // draw axes
     // x axis : transform drawing from top to bottom
     svg.append("g")
-        .attr("transform", `translate(0,${HEIGHT-PADDING})`)
+        .attr("transform", `translate(0,${HEIGHT - PADDING})`)
         .call(d3.axisBottom()
-        .scale(xScale));
+            .scale(xScale));
     // y axis : transform the drawing to display the scale number
     svg.append("g")
         .attr("transform", `translate(${PADDING},0)`)
         .call(d3.axisLeft()
-        .scale(yScale));
+            .scale(yScale));
 }
