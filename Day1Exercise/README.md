@@ -25,6 +25,10 @@ Tips :
 * Use SVG circles
 * Scale data by 10 times
 
+Note : 
+* D3.js v5 and v4 have different behaviour for read csv
+* v5 have promise framework. Thus v4 code will not work on v5 
+
 Additional References
 * [Making scatter Plot](https://alignedleft.com/tutorials/d3/making-a-scatterplot)
 * [D3.js Practical Introduction](https://www.youtube.com/watch?v=TOJ9yjvlapY&list=PLAWhhmqB115BFOrcntOGDE-DsDFeXa_i0&index=2&t=0s)

@@ -16,3 +16,9 @@ Developer Kit : Frontend
 ## Visual Studio Code Extension
 
 * Live Server
+* Debugger for Chrome
+
+## Debugger
+
+* add `debugger` to code to stop and debug at chrome
+* [VS Code Debugger](https://code.visualstudio.com/docs/editor/debugging)
