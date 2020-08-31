@@ -1,30 +1,35 @@
 function myScatterPlot() {
     var dataset = [[10, 15], [20, 20], [5, 20], [7, 4], [22, 6]];
     console.log("entering...");
-    
+
     //debugger;
+    // for D3.js v5 and above, d3.csv() use promise design pattern
     const myPromise = d3.csv("./dataset.csv");
-    
-    myPromise.then((data)  => {
 
-        //debugger;
-        console.log("callback...")
+    myPromise.then((data) => {
+            //debugger;
+            console.log("callback...")
 
-        var i=0;
-        data.forEach(d => {
-            d.x = +d.x;
-            d.y = +d.y;
+            var i = 0;
+            var csvDataset = new Array(data.length);
+            for (var ii = 0; ii < csvDataset.length; ii++) { 
+                csvDataset[ii] = new Array(2); 
+            } 
             //
-            dataset[i][0] = d.x;
-            dataset[i][1] = d.y;
-            i++;
-        });
+            data.forEach(d => {
+                d.x = +d.x;
+                d.y = +d.y;
+                //
+                csvDataset[i][0] = d.x;
+                csvDataset[i][1] = d.y;
+                i++;
+            });
 
-        // plot to view
-        plot(dataset);
+            // plot to view
+            plot(csvDataset);
         })
         .catch(error => {
-            alert("File Missing!!!")
+            alert(`dataset error : ${error.message}`)
         });
 
 }
