@@ -49,3 +49,24 @@ Create code to reverse a string
 ## Self Assessment
 
 [Self Assessment](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Silly_story_generator)
+
+## Image Gallery
+
+[Image](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Image_gallery)
+
+## Bank List
+
+* Create an HTML document which shows a list of Banks. [use, <UL> <LI> to create the list).
+
+```html
+<ul>
+  <li>DBS</li>
+  <li>UOB</li>
+  <li>OCBC</li>
+  <li>Citi</li>
+</ul>
+```
+* Write a javaScript function addNew(), which when called through a button-click in the HTML page, adds a new bank to the list in the HTML document.
+* New bank to add. “MYDigi bank”
+
+Tips: use “ appendChild() ” to ac a new child to list.

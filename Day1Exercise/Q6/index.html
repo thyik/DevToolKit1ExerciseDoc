@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banks</title>
+    <script>
+        function addBank(){
+            var node = document.createElement("LI");                 // Create a <li> node
+            var textnode = document.createTextNode("MyDigi");         // Create a text node
+            node.appendChild(textnode);                              // Append the text to <li>
+            document.getElementById("banks").appendChild(node);     // Append <li> to <ul> with id="myList"         
+        }
+    </script>
+</head>
+<body>
+    <ul id="banks">
+        <li>DBS</li>
+        <li>UOB</li>
+        <li>OCBC</li>
+        <li>Citi</li>
+    </ul>
+    <button onclick="addBank()">Add</button>
+</body>
+</html>
