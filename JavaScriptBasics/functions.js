@@ -23,3 +23,8 @@ let futureValueAF = (principle, rate, years, ci =2) => { //Arrow Function
 }
 console.log(futureValueAF(10000, 3, 5, 1).toFixed(2));
 
+// formulate single line arrow function for single line return
+let futureValueAF1 = (principle, rate, years, ci =2) => (principle * (1 + rate/100/ci)**(ci * years));
+
+console.log(futureValueAF1(10000, 3, 5, 1).toFixed(2));
+

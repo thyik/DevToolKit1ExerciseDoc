@@ -8,14 +8,30 @@ console.log(accDetails);
 console.log("My account balance is: $" + accDetails[1]);
 
 //add/delete at the end
-console.log("pop :"); names.pop(); console.log(names);
-console.log("push :"); names.push('James'); console.log(names);
+console.log("pop :"); 
+names.pop(); 
+console.log(names);
+
+console.log("push :"); 
+names.push('James'); 
+console.log(names);
 
 //add at the end and delete from the front
-console.log("shift :"); names.shift(); console.log(names);
-console.log("unshift :"); names.unshift('Lim'); console.log(names);
+console.log("shift :"); 
+names.shift(); 
+console.log(names);
+
+console.log("unshift :"); 
+names.unshift('Lim'); 
+console.log(names);
+
 //add/delete at middle
+console.log("splice :"); 
 console.log(names.splice(1, 1, ["Lim", "jenny"]));
+
+console.log("splice name :", names);
+console.log("splice name1 :", names[2]); 
+
 
 
 
